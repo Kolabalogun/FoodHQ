@@ -14,7 +14,7 @@ import Categories from "../Components/Category/Categories";
 import FeaturedRow from "../Components/Featured/FeaturedRow";
 import client from "../../sanity";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [featuredCategories, featuredCategoriesF] = useState([]);
 
   // get data from Sanity
@@ -50,7 +50,11 @@ const Home = () => {
             <ChevronDownIcon size={20} color="#00ccbb" />
           </View>
         </View>
-        <UserIcon size={32} color="#00ccbb" />
+        <UserIcon
+          size={32}
+          onPress={() => navigation.navigate("MyModal")}
+          color="#00ccbb"
+        />
       </View>
 
       {/* Search  */}
@@ -60,7 +64,11 @@ const Home = () => {
           <MagnifyingGlassIcon color="gray" size={20} />
           <TextInput placeholder="Restaurants and cuisines" />
         </View>
-        <AdjustmentsVerticalIcon size={25} color="#00ccbb" />
+        <AdjustmentsVerticalIcon
+          onPress={() => navigation.navigate("mo")}
+          size={25}
+          color="#00ccbb"
+        />
       </View>
 
       {/* Body  */}
